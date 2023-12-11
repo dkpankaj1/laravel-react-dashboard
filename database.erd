@@ -1,0 +1,208 @@
+erdiagram DMS
+notation=default
+
+entity Admin{
+   ID key
+   firstname
+   Lastname
+   email
+   phone
+   password
+   status
+}
+
+entity Rider{
+   ID key
+   firstname
+   Lastname
+   slug
+   phone
+   email
+   password 
+}
+
+entity Supplier{
+   ID key
+   name
+   slug
+   phone
+   email
+   password 
+}
+
+relationship RiderAddress_Morph{
+   Address -> Rider
+}
+relationship SupplierAddress_Morph{
+   Address -> Supplier
+}
+
+entity AddressType{
+   ID key
+   type
+   description
+}
+
+entity Address{
+   ID key
+   addressType
+   addrassable_type  
+   addrassable_id  
+   address
+   phone
+   email
+   city
+   state 
+   country
+   pincode
+   status
+}
+
+relationship AddressTypeBelongToAddress{
+   Address -> AddressType
+}
+
+entity SupplierFarm{
+   ID key
+   retailerID
+   name
+   slug
+   phone
+   email 
+   address
+   city
+   state
+   country
+   pincode
+   status
+}
+
+relationship SupplierFarmBelongToSupplier{
+      Supplier -> SupplierFarm  
+} 
+
+entity Customer{
+   ID key
+   firstname
+   lastname
+   email
+   phone
+   slug
+   address
+   city
+   state
+   country
+   pincode
+   status
+}
+
+entity CustomerLogin{
+   ID key
+   CustomerId
+   Username
+   Password
+   status
+}
+relationship CustomerLoginBelongTo{
+   Customer->CustomerLogin
+}
+
+entity Categorie{
+   ID key
+   name
+   slug
+   description
+   status
+}
+entity SubCategorie{
+   ID key
+   categorieId
+   name
+   slug
+   description
+   status
+}
+relationship SubCategorieBelongToCategorie{
+   Categorie -> SubCategorie
+}
+
+entity Brand{
+   ID key
+   name
+   slug
+   description
+   status
+}
+
+entity Unit{
+   ID key
+   name
+   shortName
+   baseUnit
+   operator
+   operator_value
+   description
+}
+
+entity Product{
+   ID key
+   name
+   description
+   barcodeType
+   barcode
+   stockKeepUnit_sku
+   unitID
+   taxRate
+   TaxNet
+   discountType
+   discount
+   currentPrice_cmrp
+   oldPrice_omrp
+   marketOpeningPrice_mop
+   categorieID
+   subCategorieID
+   brandID
+   slug
+   status
+}
+relationship ProductBelongToCategorie{Product -> Categorie}
+relationship ProductBelongToSubCategorie{Product -> SubCategorie}
+relationship ProductBelongToBrand{Product -> Brand}
+relationship ProductBelongToUnit{Product -> Unit} 
+
+entity PaymentStatus{
+   ID key
+   code
+   name
+   description
+}
+
+entity Purchase{
+   ID key
+   ref
+   date
+   supplierID
+   taxRate
+   TaxNet
+   discountType
+   discount
+   shipping
+   grandtotal
+   status
+   paymentStatus
+   notes
+   userID
+}
+
+entity PurchaseDetail{
+   ID key
+   purchaseID
+   ProductID
+   quentity
+   purchaseUnit
+   taxRate
+   TaxNet
+   discountType
+   discount
+   marketOpeningPrice_mop
+}

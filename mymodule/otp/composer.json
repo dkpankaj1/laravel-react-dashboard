@@ -1,0 +1,29 @@
+{
+    "name": "Dkpankaj/laravel-otp",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Okoh",
+            "email": "michael@okoh.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Dkpankaj\\Otp\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dkpankaj\\Otp\\OtpServiceProvider"
+            ],
+            "aliases": {
+                "Otp": "Dkpankaj\\Otp\\Otp"
+            }
+        }
+    },
+    "require": {},
+    "description": "A simple package to generate and validate OTPs"
+}
