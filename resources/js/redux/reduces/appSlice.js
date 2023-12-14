@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import AppConstent from '../../config/constent'
+import {THEME_CONST} from '../../config/constent'
 
 const initialState = {
     appName : "MILK_MILCH",
+    isLoading : false,
     dashboardLayout:{
-        colorScheme : AppConstent.THEMES.COLOR_SCHEME.DARK,
+        colorScheme : THEME_CONST.COLOR_SCHEME.DARK,
         sidebar : {
-            colorScheme : AppConstent.THEMES.SEDEBAR.COLOR.DARK,
-            visible : AppConstent.THEMES.SEDEBAR.VISIBLE.ACTIVE,
-            unfoldable : AppConstent.THEMES.SEDEBAR.UNFOLDABLE.INACTIVE
+            colorScheme : THEME_CONST.SEDEBAR.COLOR.DARK,
+            visible : THEME_CONST.SEDEBAR.VISIBLE.ACTIVE,
+            unfoldable : THEME_CONST.SEDEBAR.UNFOLDABLE.INACTIVE
         } 
     }
 }
@@ -17,6 +18,9 @@ const appSlice = createSlice({
         name : 'app',
         initialState : initialState,
         reducers : {
+            setLoadingState(state,action){
+                state.isLoading = action.payload
+            },
             toggleThemeScheme(state,action){
                 state.dashboardLayout.colorScheme = action.payload
             },
@@ -25,10 +29,10 @@ const appSlice = createSlice({
             },
             toggleUnfoldable(state,){
                 state.dashboardLayout.sidebar.unfoldable = !state.dashboardLayout.sidebar.unfoldable
-            }
+            },            
         },
         extraReducers : (builder) => {}
 })
 
-export const {toggleThemeScheme,toggleSidebar,toggleUnfoldable} = appSlice.actions
+export const {setLoadingState,toggleThemeScheme,toggleSidebar,toggleUnfoldable} = appSlice.actions
 export default appSlice.reducer

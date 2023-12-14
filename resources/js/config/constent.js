@@ -1,5 +1,5 @@
-const theme = Object.freeze({
-    SEDEBAR: {
+export const THEME_CONST = Object.freeze({
+    SIDEBAR: {
         COLOR: {
             DARK: "dark",
             LIGHT: "light",
@@ -20,8 +20,6 @@ const theme = Object.freeze({
     },
 });
 
-const AppConstent = {
-    THEMES: theme,
-};
 
-export default AppConstent;
+
+

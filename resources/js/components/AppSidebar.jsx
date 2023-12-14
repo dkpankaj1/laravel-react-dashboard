@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {toggleSidebar,toggleUnfoldable} from '../redux/reduces/appSlice'
-import AppConstent from '../config/constent'
+import {THEME_CONST} from '../config/constent'
 
 import {
   CCloseButton,
@@ -49,7 +49,7 @@ const AppSidebar = () => {
         <CCloseButton
           className="d-lg-none"
           dark
-          onClick={() => dispatch(toggleSidebar(AppConstent.THEMES.SEDEBAR.VISIBLE.INACTIVE))}
+          onClick={() => dispatch(toggleSidebar(THEME_CONST.SEDEBAR.VISIBLE.INACTIVE))}
         />
       </CSidebarHeader>
 

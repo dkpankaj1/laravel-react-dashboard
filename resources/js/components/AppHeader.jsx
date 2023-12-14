@@ -2,7 +2,7 @@ import React,{ useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {toggleSidebar,toggleThemeScheme} from '../redux/reduces/appSlice'
-import AppConstent from '../config/constent'
+import {THEME_CONST} from '../config/constent'
 import {
   CContainer,
   CDropdown,
@@ -102,29 +102,29 @@ const AppHeader = () => {
             </CDropdownToggle>
             <CDropdownMenu>
               <CDropdownItem
-                active={themeSchemeState === AppConstent.THEMES.COLOR_SCHEME.LIGHT}
+                active={themeSchemeState === THEME_CONST.COLOR_SCHEME.LIGHT}
                 className="d-flex align-items-center"
                 component="button"
                 type="button"
-                onClick={() => dispatch(toggleThemeScheme(AppConstent.THEMES.COLOR_SCHEME.LIGHT))}
+                onClick={() => dispatch(toggleThemeScheme(THEME_CONST.COLOR_SCHEME.LIGHT))}
               >
                 <CIcon className="me-2" icon={cilSun} size="lg" /> Light
               </CDropdownItem>
               <CDropdownItem
-                active={themeSchemeState === AppConstent.THEMES.COLOR_SCHEME.DARK}
+                active={themeSchemeState === THEME_CONST.COLOR_SCHEME.DARK}
                 className="d-flex align-items-center"
                 component="button"
                 type="button"
-                onClick={() => dispatch(toggleThemeScheme(AppConstent.THEMES.COLOR_SCHEME.DARK))}
+                onClick={() => dispatch(toggleThemeScheme(THEME_CONST.COLOR_SCHEME.DARK))}
               >
                 <CIcon className="me-2" icon={cilMoon} size="lg" /> Dark
               </CDropdownItem>
               <CDropdownItem
-                active={themeSchemeState === AppConstent.THEMES.COLOR_SCHEME.AUTO}
+                active={themeSchemeState === THEME_CONST.COLOR_SCHEME.AUTO}
                 className="d-flex align-items-center"
                 component="button"
                 type="button"
-                onClick={() => dispatch(toggleThemeScheme(AppConstent.THEMES.COLOR_SCHEME.AUTO))}
+                onClick={() => dispatch(toggleThemeScheme(THEME_CONST.COLOR_SCHEME.AUTO))}
               >
                 <CIcon className="me-2" icon={cilContrast} size="lg" /> Auto
               </CDropdownItem>
