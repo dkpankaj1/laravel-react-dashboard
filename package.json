@@ -1,17 +1,12 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
-  "version": "5.0.0-rc.0",
-  "description": "CoreUI Free React Admin Template",
+  "name": "laravel-react-admin-template",
+  "version": "1.0",
+  "description": "CoreUI Laravel React Admin Template",
   "homepage": ".",
-  "bugs": {
-    "url": "https://github.com/coreui/coreui-free-react-admin-template/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:coreui/coreui-free-react-admin-template.git"
-  },
+
+
   "license": "MIT",
-  "author": "The CoreUI Team (https://github.com/orgs/coreui/people)",
+  "author": "cortex it solution",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
