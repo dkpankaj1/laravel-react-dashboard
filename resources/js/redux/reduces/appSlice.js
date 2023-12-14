@@ -7,9 +7,9 @@ const initialState = {
     dashboardLayout:{
         colorScheme : THEME_CONST.COLOR_SCHEME.DARK,
         sidebar : {
-            colorScheme : THEME_CONST.SEDEBAR.COLOR.DARK,
-            visible : THEME_CONST.SEDEBAR.VISIBLE.ACTIVE,
-            unfoldable : THEME_CONST.SEDEBAR.UNFOLDABLE.INACTIVE
+            colorScheme : THEME_CONST.SIDEBAR.COLOR.DARK,
+            visible : THEME_CONST.SIDEBAR.VISIBLE.ACTIVE,
+            unfoldable : THEME_CONST.SIDEBAR.UNFOLDABLE.INACTIVE
         } 
     }
 }

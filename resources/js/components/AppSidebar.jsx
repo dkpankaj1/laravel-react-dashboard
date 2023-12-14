@@ -49,7 +49,7 @@ const AppSidebar = () => {
         <CCloseButton
           className="d-lg-none"
           dark
-          onClick={() => dispatch(toggleSidebar(THEME_CONST.SEDEBAR.VISIBLE.INACTIVE))}
+          onClick={() => dispatch(toggleSidebar(THEME_CONST.SIDEBAR.VISIBLE.INACTIVE))}
         />
       </CSidebarHeader>
 
