@@ -14,7 +14,6 @@ import {
   CHeaderToggler,
   CNavLink,
   CNavItem,
-  useColorModes,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import {
@@ -32,10 +31,9 @@ import { AppHeaderDropdown } from './header/index'
 
 const AppHeader = () => {
   const headerRef = useRef()
-  // const { colorMode, setColorMode } = useColorModes('coreui-free-react-admin-template-theme')
-  const themeSchemeState = useSelector((state) => state.app.dashboardLayout.colorScheme) 
-
   const dispatch = useDispatch()
+
+  const themeSchemeState = useSelector((state) => state.app.dashboardLayout.colorScheme) 
   const sidebarShow = useSelector((state) =>state.app.dashboardLayout.sidebar.visible)
 
   useEffect(() => {
