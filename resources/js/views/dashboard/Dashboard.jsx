@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
+import {useSelector} from 'react-redux'
 
 const Dashboard = () => {
  
+  const appNameState = useSelector((state) => state.app.appName)
+  useState(()=>{
+    document.title = `Dashboard - ${appNameState}`
+  },[])
+
 
   return (
     <>

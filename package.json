@@ -3,8 +3,6 @@
   "version": "1.0",
   "description": "CoreUI Laravel React Admin Template",
   "homepage": ".",
-
-
   "license": "MIT",
   "author": "cortex it solution",
   "scripts": {
@@ -37,6 +35,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.3",
     "react-router-dom": "^6.20.0",
+    "react-toastify": "^9.1.3",
     "redux": "4.2.1",
     "simplebar-react": "^3.2.4"
   },

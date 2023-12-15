@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react'
 import { AppContent, AppSidebar, AppFooter, AppHeader } from '../components/index'
-
-import { Outlet } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 
 const AppLayout = () => {
 
   const navigate = useNavigate()
-  // const appStateIsAuthenticate = useSelector((state) => state.auth.isAuthenticated)
-  const appStateIsAuthenticate = true
+  const appStateIsAuthenticate = useSelector((state) => state.auth.isAuthenticated)
+  const accessToken = useSelector((state) => state.auth.accessToken)
+
+  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+
+
   useEffect(() => {
     if (appStateIsAuthenticate !== true) { return navigate('/login') }
   }, [appStateIsAuthenticate])

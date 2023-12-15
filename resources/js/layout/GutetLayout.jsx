@@ -6,9 +6,7 @@ import { useNavigate } from 'react-router-dom'
 function GuestLayout() {
 
   const navigate = useNavigate()
-  // const appStateIsAuthenticate = useSelector((state) => state.auth.isAuthenticated)
-  const appStateIsAuthenticate = true
-
+  const appStateIsAuthenticate = useSelector((state) => state.auth.isAuthenticated)
 
 
   useEffect(() => {
@@ -16,7 +14,9 @@ function GuestLayout() {
   }, [appStateIsAuthenticate])
 
   return (
+    <>
       <Outlet />
+    </>
   )
 }
 

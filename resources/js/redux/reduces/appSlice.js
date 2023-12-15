@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {THEME_CONST} from '../../config/constent'
+import {persistColorScheme,readColorScheme} from '../../services/storage/app.storage'
 
 const initialState = {
     appName : "MILK_MILCH",
@@ -14,6 +15,10 @@ const initialState = {
     }
 }
 
+const setInitialAppState = () => {initialState.dashboardLayout.colorScheme = readColorScheme()};
+
+setInitialAppState();
+
 const appSlice = createSlice({
         name : 'app',
         initialState : initialState,
@@ -22,6 +27,7 @@ const appSlice = createSlice({
                 state.isLoading = action.payload
             },
             toggleThemeScheme(state,action){
+                persistColorScheme(action.payload)
                 state.dashboardLayout.colorScheme = action.payload
             },
             toggleSidebar(state,action){
