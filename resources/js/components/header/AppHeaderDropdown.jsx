@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logoutProcess } from '../../redux/reduces/authSlice'
+import { LOADING_CONST } from '../../config/constent'
 import {
   CAvatar,
   CBadge,
@@ -51,7 +52,7 @@ const AppHeaderDropdown = () => {
 
         <CDropdownItem href="/logout" onClick={handleLogout}>
         <CIcon icon={cilAccountLogout} className="me-2" />
-          {appLoadingState === true ? "Loading.." : "LogOut"}
+          {appLoadingState == true ? LOADING_CONST.LOGOUT: "LogOut"}
         </CDropdownItem>
 
       </CDropdownMenu>

@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux';
 import { loginProcess } from '../../../redux/reduces/authSlice'
+import { LOADING_CONST } from '../../../config/constent';
 
 import {
   CButton,
@@ -68,7 +69,7 @@ const Login = () => {
                     <CRow>
                       <CCol xs={6}>
                         <CButton color="primary" className="px-4" type='submit'>
-                          {appLoadingState == true ? "Loading..": "Login"}
+                          {appLoadingState == true ? LOADING_CONST.LOGING: "Login"}
                         </CButton>
                       </CCol>
                     </CRow>

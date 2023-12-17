@@ -17,14 +17,14 @@ import {
 const initialState = {
     isAuthenticated: false,
     accessToken: null,
-    authenticatedUser: {},
+    user: {},
 };
 
 const setInitialAuthState = () => {
     if (readUser() && readToken() && readAuthState()) {
         initialState.isAuthenticated = readAuthState();
         initialState.accessToken = readToken();
-        initialState.authenticatedUser = readUser();
+        initialState.user = readUser();
     }
 };
 
@@ -73,7 +73,7 @@ export const authSlice = createSlice({
                 Object.assign(state, {
                     isAuthenticated: true,
                     accessToken: token,
-                    authenticatedUser: user,
+                    user: user,
                 });
             }
 
@@ -102,7 +102,7 @@ export const authSlice = createSlice({
                 Object.assign(state, {
                     isAuthenticated: false,
                     accessToken: null,
-                    authenticatedUser: {},
+                    user: {},
                 });
             }
 

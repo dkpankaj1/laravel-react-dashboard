@@ -4,11 +4,8 @@ namespace App\Http\Controllers\API\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\ProfileUpdateRequest;
-use App\Traits\HttpAuthResponses;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
-use App\Models\PermissionGroup;
-use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -43,7 +40,7 @@ class ProfileController extends Controller
         try {
 
             $request->user()->save();
-            return $this->success('profile update success.!',[],200);
+            return $this->success('profile update success.!',["user" =>  $request->user()],200);
 
         } catch (\Exception $e) {
 

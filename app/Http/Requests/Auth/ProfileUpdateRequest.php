@@ -22,7 +22,7 @@ class ProfileUpdateRequest extends FormRequest
         return [
             'name' => ['sometimes', 'max:255'],
             'email' => ['sometimes', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
-            'phone' => ['sometimes','digit:10'],
+            'phone' => ['sometimes'],
             'address' => ['sometimes','string'],
             'city' => ['sometimes','string'],
             'state' => ['sometimes','string'],

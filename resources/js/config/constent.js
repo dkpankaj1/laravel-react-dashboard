@@ -2,9 +2,19 @@ export const AUTH_CONST = Object.freeze({
     STORAGE_KEY: {
         IS_AUTHENTICATED: "isAuthenticated",
         ACCESS_TOKEN: "accessToken",
-        AUTH_USER: "userInfo",
+        AUTH_USER: "user",
     },
 });
+export const LOADING_CONST = Object.freeze({
+    LOGING  : "Loging...",
+    LOGOUT  : "Logout...",
+    
+    FETCHING : "Fetching...",    
+    UPDATING : "Updation...",
+    CREATING : "Creating...",
+    DELETING: "Deleting..."
+
+})
 
 export const STATUS_CONST = Object.freeze({
     ACTIVE: true,
